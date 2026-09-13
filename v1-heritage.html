@@ -1,0 +1,236 @@
+<!doctype html>
+<title>Pence Heritage</title>
+<meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap');
+
+:root{
+  --navy:#0d1b3d;
+  --navy-2:#152a5c;
+  --gold:#b8974f;
+  --gold-light:#e4cd9a;
+  --cream:#f7f3ea;
+  --ink:#1c2333;
+  --line:#d8cba8;
+  font-family:'Jost',Georgia,serif;
+}
+body{margin:0;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.serif{font-family:'Playfair Display',Georgia,serif;}
+.script{font-family:'Cormorant Garamond',Georgia,serif;}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(184,151,79,.35);}
+.bar{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand .platt{background:#fff;padding:6px 10px;border-radius:3px;display:flex;align-items:center;}
+.brand .platt img{display:block;height:30px;width:auto;}
+.brand .est{display:block;color:#8fa0c9;font-size:10px;letter-spacing:.2em;margin-top:2px;}
+.brand .sub{color:#cfd7ef;letter-spacing:.1em;font-size:12px;}
+nav{display:flex;gap:34px;}
+nav a{color:#cfd7ef;font-size:13px;letter-spacing:.12em;text-transform:uppercase;transition:color .2s;position:relative;}
+nav a:hover{color:var(--gold-light);}
+.cta{border:1px solid var(--gold);color:var(--gold-light)!important;padding:9px 20px;border-radius:1px;font-size:12px;}
+.cta:hover{background:var(--gold);color:var(--navy)!important;}
+@media(max-width:820px){nav{display:none;}}
+
+/* hero */
+.hero{position:relative;padding:96px 24px 110px;text-align:center;background:
+  radial-gradient(ellipse at 30% -10%, rgba(184,151,79,.16), transparent 60%),
+  linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 60%, #1a2f66 100%);
+  overflow:hidden;
+}
+.hero::before{content:"";position:absolute;inset:0;opacity:.05;
+  background-image:repeating-linear-gradient(45deg,#fff 0 1px,transparent 1px 26px);
+}
+.hero .eyebrow{color:var(--gold-light);letter-spacing:.32em;font-size:11px;text-transform:uppercase;margin-bottom:22px;position:relative;}
+.hero h1{color:#fff;font-size:clamp(38px,6vw,66px);line-height:1.08;margin:0 0 22px;font-weight:600;position:relative;}
+.hero h1 em{font-style:italic;color:var(--gold-light);font-weight:500;}
+.hero p{max-width:600px;margin:0 auto 40px;color:#b9c3e0;font-size:17px;line-height:1.7;position:relative;font-family:'Cormorant Garamond',serif;font-size:20px;}
+.hero .btns{display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--navy);padding:15px 34px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border-radius:1px;font-weight:500;}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:#fff;padding:15px 34px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;}
+.hero .rule{width:64px;height:1px;background:var(--gold);margin:36px auto 0;position:relative;}
+
+/* stats */
+.stats{max-width:980px;margin:-46px auto 0;position:relative;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(13,27,61,.25);display:grid;grid-template-columns:repeat(4,1fr);}
+.stats div{padding:30px 16px;text-align:center;border-right:1px solid var(--line);}
+.stats div:last-child{border-right:none;}
+.stats b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);}
+.stats span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8a7f63;}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr);}.stats div{border-bottom:1px solid var(--line);}}
+
+/* section shell */
+section{padding:100px 24px;}
+.wrap{max-width:1180px;margin:0 auto;}
+.head{text-align:center;max-width:640px;margin:0 auto 56px;}
+.head .kicker{color:var(--gold);letter-spacing:.28em;font-size:11px;text-transform:uppercase;margin-bottom:14px;}
+.head h2{font-size:clamp(28px,4vw,40px);margin:0 0 14px;color:var(--navy);}
+.head p{color:#6b6252;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.6;}
+
+/* auctions */
+.auctions{background:var(--navy);}
+.auctions .head h2,.auctions .head p{color:#fff;}
+.auctions .head p{color:#aab4d6;}
+.acards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;background:rgba(184,151,79,.25);border:1px solid rgba(184,151,79,.25);}
+.acard{background:var(--navy-2);padding:34px 30px;position:relative;transition:background .25s;}
+.acard:hover{background:#1c3269;}
+.acard .date{color:var(--gold-light);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+.acard h3{color:#fff;font-family:'Playfair Display',serif;font-size:21px;margin:0 0 10px;line-height:1.3;}
+.acard .loc{color:#94a1c9;font-size:13px;margin-bottom:16px;}
+.acard p{color:#c3cae4;font-size:14px;line-height:1.65;margin:0;}
+.acard .num{position:absolute;top:26px;right:28px;font-family:'Playfair Display',serif;color:rgba(184,151,79,.4);font-size:34px;}
+
+/* highlights */
+.highlights .wrap{max-width:1000px;}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px;}
+.hl{border:1px solid var(--line);padding:26px 22px;text-align:center;background:#fff;position:relative;}
+.hl::before{content:"";position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid var(--gold-light);pointer-events:none;}
+.hl b{display:block;font-family:'Playfair Display',serif;color:var(--gold);font-size:22px;margin-top:10px;}
+.hl .item{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--navy);}
+.hl .sold{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#a39a7f;margin-top:10px;}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;}
+.svc{text-align:center;padding:20px;}
+.svc .ic{width:56px;height:56px;margin:0 auto 20px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);}
+.svc h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:20px;margin:0 0 10px;}
+.svc p{color:#6b6252;font-size:14px;line-height:1.7;}
+
+/* footer */
+footer{background:#0a1530;color:#8b96bd;padding:60px 24px 30px;}
+.fwrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+footer h4{color:#fff;font-family:'Playfair Display',serif;font-weight:500;font-size:16px;margin:0 0 16px;}
+footer a{display:block;color:#8b96bd;font-size:13px;margin-bottom:10px;}
+footer a:hover{color:var(--gold-light);}
+.fbottom{max-width:1180px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media(max-width:700px){.fwrap{grid-template-columns:1fr;}}
+</style>
+
+<header>
+  <div class="bar">
+    <div class="brand">
+      <span class="platt"><img src="images/pence-logo.png" alt="Pence Auction &amp; Estate Sales"></span>
+      <div>
+        <div class="sub">AUCTION &amp; ESTATE SALES</div>
+        <span class="est">EST. 1982 &nbsp;·&nbsp; LIBERTY, MISSOURI</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#auctions">Auctions</a>
+      <a href="#estates">Estate Sales</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Fine Art &amp; Antique Auctioneers · Since 1982</div>
+  <h1>A tradition of <em>excellence</em>,<br>built over four decades.</h1>
+  <p>Pence Auction and Pence Estate Sales provide uncompromising attention to every estate, auction and appraisal — trusted by collectors and families across Missouri and beyond.</p>
+  <div class="btns">
+    <a class="btn-gold" href="#auctions">View Upcoming Auctions</a>
+    <a class="btn-outline" href="#contact">Request an Appraisal</a>
+  </div>
+  <div class="rule"></div>
+</section>
+
+<div class="stats">
+  <div><b>43+</b><span>Years in Business</span></div>
+  <div><b>$35,700</b><span>Top Lot Realized</span></div>
+  <div><b>1000s</b><span>Estates Settled</span></div>
+  <div><b>Nationwide</b><span>Buyer Network</span></div>
+</div>
+
+<section class="auctions" id="auctions">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Calendar</div>
+      <h2>Upcoming Auctions</h2>
+      <p>Gallery-style sales, catalogued and photographed, marketed to serious buyers coast to coast.</p>
+    </div>
+    <div class="acards">
+      <div class="acard"><span class="num">01</span>
+        <div class="date">Sunday, September 13 · 11:00 AM</div>
+        <h3>Shelley Standau Living Estate</h3>
+        <div class="loc">Pleasant Valley Center, Pleasant Valley, MO</div>
+        <p>150+ pieces of Fenton glassware, Waterford crystal, Murano glass, Royal Albert china and antique furniture.</p>
+      </div>
+      <div class="acard"><span class="num">02</span>
+        <div class="date">Saturday, September 26 · 10:00 AM</div>
+        <h3>Important Multi-Estate Antique Auction</h3>
+        <div class="loc">KCI Expo Center, Kansas City, MO</div>
+        <p>French bronze candelabra, a Harriet Frishmuth figure, Chinese &amp; Japanese porcelains and fine estate jewelry.</p>
+      </div>
+      <div class="acard"><span class="num">03</span>
+        <div class="date">Sunday, October 4 · 11:00 AM</div>
+        <h3>Bill Hoobing Estate Auction</h3>
+        <div class="loc">Earnest Shepherd Center, Liberty, MO</div>
+        <p>Over 50 antique clocks, primitives, cast iron and Wedgwood from a remarkable multi-outbuilding estate.</p>
+      </div>
+      <div class="acard"><span class="num">04</span>
+        <div class="date">Sunday, October 11 · 11:00 AM</div>
+        <h3>Peggy Lewis Lifetime Collection</h3>
+        <div class="loc">Pleasant Valley Center, Pleasant Valley, MO</div>
+        <p>One of the most significant private collections offered in years — first of several sessions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Provenance</div>
+      <h2>Recent Highlights Sold</h2>
+      <p>A record of results our consignors have come to expect.</p>
+    </div>
+    <div class="hl-grid">
+      <div class="hl"><div class="item">Tiffany Poppy Lamp</div><b>$35,700</b><div class="sold">Sold Dec 2017</div></div>
+      <div class="hl"><div class="item">Thos. Pitts Silver Epergne</div><b>$7,875</b><div class="sold">Sold Dec 2017</div></div>
+      <div class="hl"><div class="item">Wooten Rotary Desk</div><b>$6,825</b><div class="sold">Sold Oct 2017</div></div>
+      <div class="hl"><div class="item">Francis I Sterling Tea Set</div><b>$7,560</b><div class="sold">Sold Feb 2018</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--cream);">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">What We Offer</div>
+      <h2>Services</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic">◆</div><h3>Appraisal Services</h3><p>Antique, fine art and household appraisals for estate and insurance purposes, prepared by a 30‑year ISA member.</p></div>
+      <div class="svc"><div class="ic">✦</div><h3>Gallery Auctions</h3><p>Regularly held, nationally marketed auctions incorporating major antiques, fine art and specialty collections.</p></div>
+      <div class="svc"><div class="ic">●</div><h3>Estate Sales</h3><p>Full-service liquidation — sorted, staged and priced on-site, with itemized accounting to executors.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="fwrap">
+    <div>
+      <h4>Pence Auction &amp; Estate Sales</h4>
+      <p style="font-size:13px;line-height:1.8;max-width:280px;">1409 Woodbury, Liberty, MO 64068<br>A multi-generational tradition of excellence, integrity and focus since 1982.</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:8168203175">Rick Pence · (816) 820‑3175</a>
+      <a href="tel:8165890919">Connor Pence · (816) 589‑0919</a>
+      <a href="mailto:penceauction@msn.com">penceauction@msn.com</a>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="#services">Services</a>
+      <a href="#auctions">Auctions</a>
+      <a href="#estates">Estate Sales</a>
+    </div>
+  </div>
+  <div class="fbottom">
+    <span>© 2026 Pence Auction &amp; Pence Estate Sales</span>
+    <span>Design concept — V1 "Heritage Editorial"</span>
+  </div>
+</footer>

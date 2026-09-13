@@ -1,0 +1,169 @@
+<!doctype html>
+<title>Pence Bold</title>
+<meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#0a0a0c;
+  --panel:#141417;
+  --panel-2:#1b1b1f;
+  --line:#2a2a2f;
+  --amber:#f2b84b;
+  --amber-2:#ffd47a;
+  --text:#eceef1;
+  --sub:#9497a1;
+  font-family:'Space Grotesk',system-ui,sans-serif;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);}
+a{color:inherit;text-decoration:none;}
+.mono{font-family:'DM Mono',monospace;}
+
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.bar{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 26px;}
+.brand{display:flex;align-items:center;}
+.brand .platt{background:#fff;padding:6px 10px;border-radius:6px;display:flex;align-items:center;}
+.brand .platt img{display:block;height:28px;width:auto;}
+nav{display:flex;align-items:center;gap:30px;}
+nav a{font-size:14px;color:var(--sub);font-weight:500;}
+nav a:hover{color:var(--text);}
+.cta{background:var(--amber);color:#141414!important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:13px;}
+.live{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--amber-2);font-family:'DM Mono',monospace;}
+.live i{width:7px;height:7px;background:#ff5a5a;border-radius:50%;box-shadow:0 0 10px #ff5a5a;animation:pulse 1.4s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media(max-width:860px){nav a:not(.cta){display:none;}}
+
+.hero{position:relative;max-width:1240px;margin:0 auto;padding:90px 26px 70px;text-align:center;overflow:hidden;}
+.hero::before{content:"";position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:500px;
+  background:radial-gradient(ellipse,rgba(242,184,75,.16),transparent 70%);pointer-events:none;}
+.hero .live-row{display:flex;justify-content:center;margin-bottom:28px;position:relative;}
+.hero h1{font-size:clamp(38px,6vw,72px);font-weight:700;line-height:1.04;margin:0 0 22px;letter-spacing:-.02em;position:relative;}
+.hero h1 span{color:var(--amber);}
+.hero p{max-width:560px;margin:0 auto 38px;color:var(--sub);font-size:17px;line-height:1.7;position:relative;}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+.btn-amber{background:linear-gradient(180deg,var(--amber-2),var(--amber));color:#171512;padding:16px 30px;border-radius:10px;font-weight:700;font-size:14px;box-shadow:0 12px 30px -10px rgba(242,184,75,.5);}
+.btn-ghost{border:1px solid var(--line);color:var(--text);padding:16px 30px;border-radius:10px;font-weight:600;font-size:14px;}
+
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);overflow:hidden;white-space:nowrap;padding:14px 0;}
+.ticker .track{display:inline-block;animation:scroll 22s linear infinite;font-family:'DM Mono',monospace;font-size:13px;color:var(--sub);}
+.ticker b{color:var(--amber-2);}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:90px 26px;}
+.wrap{max-width:1240px;margin:0 auto;}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:50px;}
+.shead .kicker{font-family:'DM Mono',monospace;font-size:12px;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.shead h2{font-size:clamp(28px,3.6vw,40px);font-weight:700;margin:0;letter-spacing:-.01em;}
+.shead p{color:var(--sub);font-size:14px;max-width:320px;margin:0;}
+
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.acard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 24px;position:relative;transition:border-color .2s,transform .2s;}
+.acard:hover{border-color:var(--amber);transform:translateY(-3px);}
+.acard .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+.acard .date{font-family:'DM Mono',monospace;font-size:12px;color:var(--amber-2);}
+.acard .status{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:20px;background:rgba(242,184,75,.12);color:var(--amber);}
+.acard h3{font-size:18px;font-weight:600;margin:0 0 8px;}
+.acard .loc{font-size:13px;color:var(--sub);margin-bottom:14px;}
+.acard p{font-size:13.5px;line-height:1.6;color:#c3c5cc;margin:0 0 18px;}
+.acard .bidbtn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--amber);}
+
+.hl-row{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);}
+.hlc{background:var(--bg);padding:30px 24px;}
+.hlc .item{font-size:15px;color:var(--sub);margin-bottom:10px;}
+.hlc b{display:block;font-family:'DM Mono',monospace;font-size:26px;color:var(--amber-2);}
+.hlc span{font-size:11px;color:#6d6f78;text-transform:uppercase;letter-spacing:.08em;}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.svc{background:var(--panel-2);border:1px solid var(--line);border-radius:14px;padding:30px 26px;}
+.svc .ic{width:44px;height:44px;border-radius:10px;background:rgba(242,184,75,.12);color:var(--amber);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-weight:700;}
+.svc h3{font-size:18px;margin:0 0 10px;font-weight:600;}
+.svc p{color:var(--sub);font-size:14px;line-height:1.7;margin:0;}
+
+footer{background:var(--panel);padding:60px 26px 28px;}
+.fwrap{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+footer h4{font-family:'DM Mono',monospace;font-size:12px;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px;}
+footer a{display:block;font-size:14px;margin-bottom:10px;color:var(--text);font-weight:500;}
+.fbottom{max-width:1240px;margin:40px auto 0;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media(max-width:800px){.fwrap{grid-template-columns:1fr;}}
+</style>
+
+<header>
+  <div class="bar">
+    <div class="brand"><span class="platt"><img src="images/pence-logo.png" alt="Pence Auction &amp; Estate Sales"></span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#auctions">Auctions</a>
+      <a href="#estates">Estate Sales</a>
+      <a href="#contact" class="cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="live-row"><span class="live"><i></i> NEXT AUCTION IN 3 DAYS · PLEASANT VALLEY, MO</span></div>
+  <h1>Bid on the <span>best</span> estates<br>before anyone else does.</h1>
+  <p>43 years of auctioneering, now built for a faster market. Catalogued lots, nationwide bidders, real-time results — since 1982.</p>
+  <div class="btns">
+    <a class="btn-amber" href="#auctions">View Live Catalog →</a>
+    <a class="btn-ghost" href="#contact">Consign an Item</a>
+  </div>
+</div>
+
+<div class="ticker">
+  <span class="track">
+    <b>SOLD</b> Tiffany Poppy Lamp — $35,700 &nbsp;·&nbsp; <b>SOLD</b> Wooten Rotary Desk — $6,825 &nbsp;·&nbsp; <b>SOLD</b> Silver Epergne — $7,875 &nbsp;·&nbsp; <b>UPCOMING</b> Shelley Standau Estate — Sep 13 &nbsp;·&nbsp; <b>UPCOMING</b> Multi-Estate Antique Auction — Sep 26 &nbsp;·&nbsp;
+    <b>SOLD</b> Tiffany Poppy Lamp — $35,700 &nbsp;·&nbsp; <b>SOLD</b> Wooten Rotary Desk — $6,825 &nbsp;·&nbsp; <b>SOLD</b> Silver Epergne — $7,875 &nbsp;·&nbsp; <b>UPCOMING</b> Shelley Standau Estate — Sep 13 &nbsp;·&nbsp; <b>UPCOMING</b> Multi-Estate Antique Auction — Sep 26 &nbsp;·&nbsp;
+  </span>
+</div>
+
+<section id="auctions">
+  <div class="wrap">
+    <div class="shead">
+      <div><div class="kicker">/ auction_calendar</div><h2>Upcoming Auctions</h2></div>
+      <p>Nationally marketed, gallery-style sales. Register once, bid on every lot.</p>
+    </div>
+    <div class="agrid">
+      <div class="acard"><div class="top"><span class="date">SEP 13 · 11:00 AM</span><span class="status">This week</span></div><h3>Shelley Standau Living Estate</h3><div class="loc">Pleasant Valley Center, MO</div><p>150+ Fenton glassware pieces, Waterford crystal, Murano glass, Royal Albert china.</p><span class="bidbtn">Register to bid →</span></div>
+      <div class="acard"><div class="top"><span class="date">SEP 26 · 10:00 AM</span><span class="status">Open</span></div><h3>Multi-Estate Antique Auction</h3><div class="loc">KCI Expo Center, Kansas City</div><p>French bronzes, Harriet Frishmuth figure, Chinese &amp; Japanese porcelains, Piaget 18k watch.</p><span class="bidbtn">Register to bid →</span></div>
+      <div class="acard"><div class="top"><span class="date">OCT 4 · 11:00 AM</span><span class="status">Open</span></div><h3>Bill Hoobing Estate</h3><div class="loc">Earnest Shepherd Center, Liberty</div><p>50+ antique clocks, primitives, cast iron — full estate clearance.</p><span class="bidbtn">Register to bid →</span></div>
+      <div class="acard"><div class="top"><span class="date">OCT 11 · 11:00 AM</span><span class="status">Open</span></div><h3>Peggy Lewis Lifetime Collection</h3><div class="loc">Pleasant Valley Center, MO</div><p>One of the most significant private collections offered in years.</p><span class="bidbtn">Register to bid →</span></div>
+      <div class="acard"><div class="top"><span class="date">OCT 24 · 11:00 AM</span><span class="status">Open</span></div><h3>Charles Schollenberger Estate</h3><div class="loc">Pleasant Valley Center, MO</div><p>Space exploration items, WWII history, campaign memorabilia + 30 guns.</p><span class="bidbtn">Register to bid →</span></div>
+      <div class="acard"><div class="top"><span class="date">NOV 29 · 11:00 AM</span><span class="status">Open</span></div><h3>Dwight Salley Estate</h3><div class="loc">Pleasant Valley Center, MO</div><p>Outstanding Steuben glassware and a wide variety of Victorian glass.</p><span class="bidbtn">Register to bid →</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hl-row">
+  <div class="wrap" style="padding-top:70px;">
+    <div class="shead"><div><div class="kicker">/ results</div><h2>Recent record lots</h2></div><p>Real hammer prices from recent sales.</p></div>
+  </div>
+  <div class="hl-grid">
+    <div class="hlc"><div class="item">Tiffany Poppy Lamp</div><b>$35,700</b><span>Dec 2017</span></div>
+    <div class="hlc"><div class="item">Silver Epergne</div><b>$7,875</b><span>Dec 2017</span></div>
+    <div class="hlc"><div class="item">Sterling Tea Set</div><b>$7,560</b><span>Feb 2018</span></div>
+    <div class="hlc"><div class="item">Wooten Rotary Desk</div><b>$6,825</b><span>Oct 2017</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="shead"><div><div class="kicker">/ services</div><h2>What we run</h2></div></div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic">A</div><h3>Gallery Auctions</h3><p>Nationally marketed catalog sales for antiques, art and specialty collections.</p></div>
+      <div class="svc"><div class="ic">$</div><h3>Appraisals</h3><p>Insurance and estate valuations from a 30-year ISA member appraiser.</p></div>
+      <div class="svc"><div class="ic">E</div><h3>Estate Liquidation</h3><p>Full-service on-site sales with itemized accounting to executors.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="fwrap">
+    <div><h4>Pence Auction</h4><p style="font-size:14px;line-height:1.8;max-width:300px;color:var(--sub);">1409 Woodbury, Liberty, MO 64068. Auctioneering since 1982.</p></div>
+    <div><h4>Contact</h4><a href="tel:8168203175">Rick Pence — (816) 820‑3175</a><a href="tel:8165890919">Connor Pence — (816) 589‑0919</a><a href="mailto:penceauction@msn.com">penceauction@msn.com</a></div>
+    <div><h4>Explore</h4><a href="#services">Services</a><a href="#auctions">Auctions</a><a href="#estates">Estate Sales</a></div>
+  </div>
+  <div class="fbottom"><span>© 2026 Pence Auction &amp; Estate Sales</span><span>Design concept — V4 "Bold Auction-Tech"</span></div>
+</footer>
